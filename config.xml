@@ -8,7 +8,17 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+	<preference name="permissions" value="none" />
+    <preference name="phonegap-version" value="cli-5.2.0" />
+    <preference name="orientation" value="default" />
+    <preference name="EnableViewportScale" value="false"/>
+    <preference name="target-device" value="universal" />
+	<plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="pgb" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-device" spec="1" />
+	
+	
+	
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
