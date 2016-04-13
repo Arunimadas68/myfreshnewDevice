@@ -3,12 +3,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <title>Device Info</title>
 <link rel="stylesheet" href="css/ionic.min.css">
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript" src="device.js"></script>
 <script>
-function onLoad()
+function load()
 {
 alert("onload");
 document.addEventListener("deviceready",odr,false);
@@ -16,6 +18,7 @@ document.addEventListener("deviceready",odr,false);
 function odr()
 {
 alert("device ready");
+alert('new');
 var cordovaVersion=device.cordova;
 var phoneModel=device.model;
 var phonePlatform=device.platform;
@@ -29,7 +32,7 @@ $("#osVersion").html(osVersion);
 }
 </script>
 </head>
-<body onload="onLoad()">
+<body onload="load()">
 <div class="bar bar-header bar-light">
 <h1 class="title">Device Information</h1>
 </div>
@@ -53,4 +56,3 @@ OS Version <p id="osVersion" class="item-note"></p>
 </div>
 </body>
 </html>
-

@@ -22,7 +22,7 @@
 var argscheck = require('cordova/argscheck'),
     channel = require('cordova/channel'),
     utils = require('cordova/utils'),
-    exec = require('cordova/exec'),
+	exec = require('cordova/exec'),
     cordova = require('cordova');
 
 channel.createSticky('onCordovaInfoReady');
