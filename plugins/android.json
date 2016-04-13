@@ -8,7 +8,10 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "com.phongap.deviceinfo"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.phongap.deviceinfo"
         }
     },
     "dependent_plugins": {}
