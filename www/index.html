@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="css/ionic.min.css">
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript" src="device.js"></script>
+<script type="text/javascript" src="plugins/cordova-plugin-device/www/device.js"></script>
 <script>
 function onLoad()
 {
@@ -17,6 +19,7 @@ function odr()
 {
 alert("device ready");
 var cordovaVersion=device.cordova;
+alert('new'+cordovaVersion);
 var phoneModel=device.model;
 var phonePlatform=device.platform;
 var phoneUUID=device.uuid;
