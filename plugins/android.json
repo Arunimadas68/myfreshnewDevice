@@ -15,6 +15,9 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.phongap.deviceinfo"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.phongap.deviceinfo"
         }
     },
     "dependent_plugins": {}
