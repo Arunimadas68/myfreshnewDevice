@@ -36,7 +36,7 @@ document.addEventListener("deviceready",odr,false);
 function odr()
 {
 alert("device ready");
-document.addEventListener("online", doWhenOnline, false);
+				document.addEventListener("online", doWhenOnline, false);
 				document.addEventListener("offline", doWhenOffline, false);
 				var networkState = navigator.connection.type;
 				
@@ -68,6 +68,60 @@ function doWhenOnline(){
 </script>
 </head>
 <body onload="onLoad()">
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript" src="device.js"></script>
+<script type="text/javascript" src="Connection.js"></script>
+<script type="text/javascript" src="network.js"></script>
+<script type="text/javascript" src="statusbar.js"></script>
+<script type="text/javascript" src="cordova_plugins.js"></script>
+
+<script>
+// Initializing global variables
+			var calcTop = ((document.body.clientHeight / 2) - 48);
+			var calcLeft = ((document.body.clientWidth / 2) - 48);
+			document.getElementById('blanker').style.top = calcTop+'px';
+			document.getElementById('blanker').style.left = calcLeft+'px';
+			document.getElementById('offline-screen').style.height = document.body.clientHeight+'px';
+
+function onLoad()
+{
+alert("onload");
+document.addEventListener("deviceready",odr,false);
+}
+function odr()
+{
+alert("device ready");
+				document.addEventListener("online", doWhenOnline, false);
+				document.addEventListener("offline", doWhenOffline, false);
+				var networkState = navigator.connection.type;
+				
+				if(networkState == Connection.NONE) {
+					doWhenOffline();
+				}
+				else{
+					doWhenOnline();
+				}     
+var cordovaVersion=device.cordova;
+alert("new");
+var phoneModel=device.model;
+var phonePlatform=device.platform;
+var phoneUUID=device.uuid;
+var osVersion=device.version;
+$("#cordovaVersion").html(cordovaVersion);
+$("#phoneModel").html(phoneModel);
+$("#phonePlatform").html(phonePlatform);
+$("#phoneUUID").html(phoneUUID);
+$("#osVersion").html(osVersion);
+}
+function doWhenOnline(){
+				document.getElementById('offline-screen').style.display = 'none';
+			}
+			
+			function doWhenOffline(){				
+				document.getElementById('offline-screen').style.display = 'block';
+			}
+</script>
 <div class="bar bar-header bar-light">
 <h1 class="title">Device Information</h1>
 </div>
