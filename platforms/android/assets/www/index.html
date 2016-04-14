@@ -3,36 +3,70 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=0.0, initial-scale=0.0, maximum-scale=0.0, user-scalable=no">
 <title>Device Info</title>
 <link rel="stylesheet" href="css/ionic.min.css">
+<style>
+			html, body{width:100%; height:100%;}
+			body{margin:0; padding:0;}
+			#blanker{width:96px; height:96px; background:url('loader.gif') no-repeat center center; display:none; z-index:1000; position:absolute;}
+			#offline-screen{width:100%; background:url('connectionlost.png') no-repeat center center; image-size:contain; display:none; z-index:1000; position:absolute;}
+		</style>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/jq.js"></script>
 <script type="text/javascript" src="device.js"></script>
 <script>
-function load()
-{
-alert("onload");
-document.addEventListener("deviceready",odr,false);
+			// Initializing global variables
+			var calcTop = ((document.body.clientHeight / 2) - 48);
+			var calcLeft = ((document.body.clientWidth / 2) - 48);
+			document.getElementById('blanker').style.top = calcTop+'px';
+			document.getElementById('blanker').style.left = calcLeft+'px';
+			document.getElementById('offline-screen').style.height = document.body.clientHeight+'px';
+	function load()
+	{
+	alert("onload");
+	document.addEventListener("deviceready",odr,false);
+	}
+	function odr()
+	{
+	alert("device ready");
+	alert('new');
+	var cordovaVersion=device.cordova;
+	var phoneModel=device.model;
+	var phonePlatform=device.platform;
+	var phoneUUID=device.uuid;
+	var osVersion=device.version;
+	$("#cordovaVersion").html(cordovaVersion);
+	$("#phoneModel").html(phoneModel);
+	$("#phonePlatform").html(phonePlatform);
+	$("#phoneUUID").html(phoneUUID);
+	$("#osVersion").html(osVersion);
+			// Blanker on change				
+				document.addEventListener("online", doWhenOnline, false);
+				document.addEventListener("offline", doWhenOffline, false);
+				var networkState = navigator.connection.type;
+				
+				if(networkState == Connection.NONE) {
+					doWhenOffline();
+				}
+				else{
+					doWhenOnline();
+				} 
 }
-function odr()
-{
-alert("device ready");
-alert('new');
-var cordovaVersion=device.cordova;
-var phoneModel=device.model;
-var phonePlatform=device.platform;
-var phoneUUID=device.uuid;
-var osVersion=device.version;
-$("#cordovaVersion").html(cordovaVersion);
-$("#phoneModel").html(phoneModel);
-$("#phonePlatform").html(phonePlatform);
-$("#phoneUUID").html(phoneUUID);
-$("#osVersion").html(osVersion);
+function doWhenOnline(){
+	document.getElementById('offline-screen').style.display = 'none';
 }
+
+function doWhenOffline(){				
+	document.getElementById('offline-screen').style.display = 'block';
+}
+			
+			
 </script>
 </head>
 <body onload="load()">
+<div id="blanker"></div>
+<div id="offline-screen"></div>	
 <div class="bar bar-header bar-light">
 <h1 class="title">Device Information</h1>
 </div>
