@@ -17,7 +17,10 @@
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-device" spec="1" />
 	<allow-navigation href="http://*/*" />
-	
+	<gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <preference name="SplashScreen" value="screen"/>
+    <preference name="SplashScreenDelay" value="4000" />
 	
     <access origin="*" />
     <allow-intent href="http://*/*" />
