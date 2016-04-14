@@ -16,9 +16,10 @@
 	<plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="pgb" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-device" spec="1" />
+	<plugin name="cordova-plugin-statusbar" />
 	<allow-navigation href="http://*/*" />
-	<gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
+	
+
     
 	
     <access origin="*" />
