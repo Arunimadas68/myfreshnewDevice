@@ -12,6 +12,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phongap.deviceinfo"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.phongap.deviceinfo"
         }
     },
     "dependent_plugins": {}
