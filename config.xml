@@ -16,9 +16,6 @@
     <plugin name="cordova-plugin-whitelist" spec="1" />
 	<plugin name="cordova-plugin-network-information" spec="1"/> 
 	<plugin name="org.apache.cordova.device" />
-    <feature name="Device">
-		<param name="android-package" value="org.apache.cordova.device.Device" />
-	</feature>	
 	
 	<allow-navigation href="http://*/*" />
 
