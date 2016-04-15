@@ -14,54 +14,7 @@
 </style>
 <script type="text/javascript" src="cordova.js"></script>	
 <script type="text/javascript" src="schedule.js"></script>	 
-<script type="text/javascript" src="network.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
-<script>
-// Initializing global variables
-		/*	var calcTop = ((document.body.clientHeight / 2) - 48);
-			var calcLeft = ((document.body.clientWidth / 2) - 48);
-			document.getElementById('blanker').style.top = calcTop+'px';
-			document.getElementById('blanker').style.left = calcLeft+'px';
-			document.getElementById('offline-screen').style.height = document.body.clientHeight+'px';
-*/
-
-function odr()
-{
-	alert('Test');
-	alert('DUUID:: '+device.uuid );
-	
-	/*
-	document.addEventListener("online", doWhenOnline, false);
-	document.addEventListener("offline", doWhenOffline, false);
-	var networkState = navigator.connection.type;
-	
-	if(networkState == Connection.NONE) {
-		doWhenOffline();
-	}
-	else{
-		doWhenOnline();
-	}     
-	var cordovaVersion=device.cordova;
-	alert("new");
-	var phoneModel=device.model;
-	var phonePlatform=device.platform;
-	var phoneUUID=device.uuid;
-	var osVersion=device.version;
-	$("#cordovaVersion").html(cordovaVersion);
-	$("#phoneModel").html(phoneModel);
-	$("#phonePlatform").html(phonePlatform);
-	$("#phoneUUID").html(phoneUUID);
-	$("#osVersion").html(osVersion);
-	*/
-}
-function doWhenOnline(){
-	document.getElementById('offline-screen').style.display = 'none';
-}
-
-function doWhenOffline(){				
-	document.getElementById('offline-screen').style.display = 'block';
-}
-</script>
 </head>
 <body>
 	<div class="bar bar-header bar-light">
@@ -89,7 +42,13 @@ function doWhenOffline(){
 	<div id="blanker"></div>
 	<div id="offline-screen"></div>	
 	<script>
-		document.addEventListener("deviceready", odr, false);
+		// Add handlers for various stages
+		document.addEventListener("deviceready", onDeviceReady, false);	
+		
+		function onDeviceReady(){
+			alert('Test');
+			alert('DUUID:: '+device.uuid);
+		}
 	</script>
 </body>
 </html>
