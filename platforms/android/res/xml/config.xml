@@ -15,6 +15,9 @@
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
+    <feature name="Schedule">
+        <param name="android-package" value="vrisini.cordova.plugin.schedule" />
+    </feature>
     <allow-intent href="market:*" />
     <name>DeviceInfo</name>
     <description>

@@ -33,6 +33,13 @@ module.exports = [
         "clobbers": [
             "Connection"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-schedule/www/schedule.js",
+        "id": "cordova-plugin-schedule.Schedule",
+        "clobbers": [
+            "schedule"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -41,7 +48,8 @@ module.exports.metadata =
     "cordova-plugin-device": "1.1.1",
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-statusbar": "2.1.2",
-    "cordova-plugin-network-information": "1.2.0"
+    "cordova-plugin-network-information": "1.2.0",
+    "cordova-plugin-schedule": "1.0.1"
 };
 // BOTTOM OF METADATA
 });

@@ -18,6 +18,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.phongap.deviceinfo"
+        },
+        "cordova-plugin-schedule": {
+            "PACKAGE_NAME": "com.phongap.deviceinfo"
         }
     },
     "dependent_plugins": {}

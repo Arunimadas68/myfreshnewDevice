@@ -23,6 +23,10 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Schedule\"><param name=\"android-package\" value=\"vrisini.cordova.plugin.schedule\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -32,6 +36,26 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<receiver android:name=\"vrisini.cordova.plugin.schedule.Receiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"vrisini.cordova.plugin.schedule.Restore\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:launchMode=\"singleInstance\" android:name=\"vrisini.cordova.plugin.schedule.ReceiverActivity\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
                             "count": 1
                         }
                     ]
@@ -50,6 +74,9 @@
             "PACKAGE_NAME": "com.phongap.deviceinfo"
         },
         "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.phongap.deviceinfo"
+        },
+        "cordova-plugin-schedule": {
             "PACKAGE_NAME": "com.phongap.deviceinfo"
         }
     },
@@ -88,12 +115,20 @@
             "clobbers": [
                 "Connection"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-schedule/www/schedule.js",
+            "id": "cordova-plugin-schedule.Schedule",
+            "clobbers": [
+                "schedule"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-device": "1.1.1",
         "cordova-plugin-whitelist": "1.2.1",
         "cordova-plugin-statusbar": "2.1.2",
-        "cordova-plugin-network-information": "1.2.0"
+        "cordova-plugin-network-information": "1.2.0",
+        "cordova-plugin-schedule": "1.0.1"
     }
 }

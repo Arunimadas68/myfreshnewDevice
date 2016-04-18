@@ -9,7 +9,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name="vrisini.cordova.plugin.schedule.Receiver" />
+        <receiver android:name="vrisini.cordova.plugin.schedule.Restore">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <activity android:launchMode="singleInstance" android:name="vrisini.cordova.plugin.schedule.ReceiverActivity" />
     </application>
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 </manifest>
