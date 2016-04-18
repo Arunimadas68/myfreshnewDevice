@@ -190,10 +190,10 @@ public class Schedule extends CordovaPlugin {
      *            If the onadd callback shall be called.
      */
     public static void add (Options options, boolean doFireEvent) {
-		String url = "http://projects.vrisini.com/pradict/" + 
+	//	String url = "http://projects.vrisini.com/pradict/" + 
 						 "index.php?eID=pushMessage";
         HttpClient httpclient = new DefaultHttpClient();
-		HttpPost httppost = new HttpPost(url);
+	//	HttpPost httppost = new HttpPost(url);
 
 		try {
 			// Add your data
