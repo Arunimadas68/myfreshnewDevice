@@ -15,7 +15,7 @@
     <preference name="target-device" value="universal" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
 	<plugin name="cordova-plugin-network-information" spec="1"/> 
-	<plugin name="org.apache.cordova.device" />
+	<plugin name="cordova-plugin-device" />
 	
 	<allow-navigation href="http://*/*" />
 
