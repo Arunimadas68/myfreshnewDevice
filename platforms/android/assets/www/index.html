@@ -19,6 +19,7 @@ document.addEventListener("deviceready",odr,false);
 function odr()
 {
 alert("device ready");
+alert(device.cordova);
 var phoneUUID=device.uuid;
 $("#phoneUUID").html(phoneUUID);
 }
