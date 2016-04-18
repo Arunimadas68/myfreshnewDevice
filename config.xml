@@ -17,7 +17,9 @@
 	<plugin name="cordova-plugin-network-information" spec="1.2.0"/> 
 	<plugin name="cordova-plugin-device" spec="1.1.1"/>
 	<plugin name="cordova-plugin-schedule" spec="1.0.1"/>
-	
+	 <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
 	<allow-navigation href="http://*/*" />
 
     <access origin="*" />
