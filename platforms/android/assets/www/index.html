@@ -15,29 +15,29 @@
 <script type="text/javascript" src="cordova.js"></script>	
 <script type="text/javascript" src="schedule.js"></script>	 
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+function onLoad()
+{
+alert("onload");
+document.addEventListener("deviceready",odr,false);
+}
+function odr()
+{
+alert("device ready");
+var phoneUUID=device.uuid;
+$("#phoneUUID").html(phoneUUID);
+}
+</script>
 </head>
-<body>
+<body onload="onLoad()">
 	<div class="bar bar-header bar-light">
 		<h1 class="title">Device Information</h1>
 	</div>
 	<br/><br/>
 	<ul class="list list-inset">
 		<div class="item">
-			Cordova Version <p id="cordovaVersion" class="item-note"></p>
-		</div>
-		<div class="item">
-			Phone Model <p id="phoneModel" class="item-note"></p>
-		</div>
-		<div class="item">
-			Platform <p id="phonePlatform" class="item-note"></p>
-		</div>
-		<div class="item">
 			UUID <p id="phoneUUID" class="item-note"></p>
 		</div>
-		<div class="item">
-			OS Version <p id="osVersion" class="item-note"></p>
-		</div>
-		
 	</ul>
 	<div id="blanker"></div>
 	<div id="offline-screen"></div>	
